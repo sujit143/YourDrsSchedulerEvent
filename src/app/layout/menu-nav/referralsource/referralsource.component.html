@@ -1,0 +1,212 @@
+<div class="ibox-title">
+    <h5>Referral Source Information</h5>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-sm-10">
+            <div class="card text-white bg-secondary mb-3">
+                <div class="card-body">
+                    <div class="card1">
+                        <div>Referral Source Information</div>
+                        <hr color="white">
+                        <div class="card-body">
+                            <form [formGroup]="resourcedetails">
+                                <div class="form-group row">
+                                    <div class="form-group col-md-4">
+                                        <label>Source Referral</label>
+                                        <select formcontrolname="sourcer" class="form-control" style="color: black">
+                                            <option value="12" selected="selected">UnKnown</option>
+                                            <option value="1">Self (Patient)</option>
+                                            <option value="3">Employer</option>
+                                            <option value="4">Representative</option>
+                                            <option value="5">Provider</option>
+                                            <option value="7">Insurance Carrier</option>
+                                            <option value="8">Office</option>
+                                            <option value="9">Hospital</option>
+                                            <option value="10">School</option>
+                                            <option value="11">Patient</option>
+                                            <option value="13">Physician Assistant </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-7">
+                                        <label>Select Referral Source Member</label>
+                                        <div class="input-group">
+                                            <input formControlName="smember" class="form-control member" type="text"
+                                                placeholder="Search member.."
+                                                style="background-color:white; color: white">
+                                            <button type="button" class="btn btn-light"
+                                                (click)="openview(contentz)"><img class="btnnn"
+                                                    src="assets/images/glyphicon1.png"></button>
+                                            <button type="button" class="btn btn-light"
+                                                (click)="opensearch(content)"><img class="btnnn"
+                                                    src="assets/images/glyphicon2.png"></button>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>width: 42px;
+                        height: 35px;
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<mat-accordion style=" margin-top: -105px; width:2000px">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <h2>Referral Source Details</h2>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="card mb-4">
+            <div class="card-body1 table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>From</th>
+                            <th>Type</th>
+                            <th>To</th>
+                            <th>On</th>
+                        </tr>
+                    </thead> No results found
+                </table>
+            </div>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>
+<div>
+    <button class="btn btn-secondary btn-complete" (click)='previousAppoinmtment()'>Previous</button>&nbsp;&nbsp;
+    <button class="btn btn-secondary btn-complete" (click)='nextDocuments()'>Next</button>&nbsp;&nbsp;
+</div>
+
+<!-- SEARCH-POPUP -->
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h2>Search-Unknown Contact </h2>
+        <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+    <div class="modal-body">
+
+        <form class="needs-validation" novalidate>
+            <div class="form-row">
+                <div class="col-md-3 mb-2">
+                    <label>Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-3 mb-2">
+                    <label>City</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>State</label>
+                    <select formcontrolname="sourcer" class="form-control" style="color: black">
+                        <option value="12" selected="selected">Any</option>
+                        <option value="1">KC</option>
+                        <option value="3">DE</option>
+                        <option value="4">AD</option>
+                        <option value="5">AK</option>
+                        <option value="7">PM</option>
+                        <option value="8">QA</option>
+                        <option value="9">DS</option>
+                        <option value="10">MS</option>
+                        <option value="11">FM</option>
+                        <option value="13">PA </option>
+                    </select>
+                </div><br><br>
+
+                <div class="btn1">
+                    <label></label><br>
+
+                    <button class="btn btn-secondary" data-toggle="collapse" href="#collapseExample">Search </button>
+
+                    <div class="collapse" id="collapseExample">
+
+                        <div class="card mb-5">
+                            <div class="card-body1 table-responsive">
+                                <table class="table table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Suffix</th>
+                                            <th>City</th>
+                                            <th>State</th>
+                                        </tr>
+                                    </thead> No results found
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+
+</ng-template>
+<!-- SEARCH-POPUP-END -->
+
+
+
+<!-- VIEW-POPUP -->
+<ng-template #contentz let-modal>
+
+    <div class="modal-header">
+        <h2>Member Details</h2>
+        <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+    <div class="modal-body">
+
+        <table class="table table-hover table-striped">
+            <tbody>
+                <tr>
+                    <td><strong>Title</strong>
+                        <br>
+                        <span>Dr</span>
+                    </td>
+
+                    <td><strong>First Name</strong>
+                        <br>
+                        <span>Robert</span>
+                    </td>
+
+                    <td><strong>Middle Name</strong>
+                        <br>
+                        <span>C</span>
+                    </td>
+
+                    <td><strong>Last Name</strong><br>
+                        <span>Silich</span></td>
+                    <td><strong>Gender</strong>
+                        <br>Male
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Date of Birth</strong><br></td>
+                    <td><strong>City</strong><br>
+                        <span>New York</span></td>
+                    <td><strong>State</strong><br>
+                        <span style="word-wrap: break-word; display: block; width: 150px;">NY</span></td>
+                    <td><strong>Email</strong><br>rsilichmd@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Profile Photo</strong>
+                        <br>
+                        <!-- <img class="img-responsive" src="/Images/Profile/5-35d3c28abb4b4a6e8b1c3f43ab7b3ebc.JPG" style="width:35%"> -->
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+</ng-template>
+<!-- VIEW-POPUP-END -->

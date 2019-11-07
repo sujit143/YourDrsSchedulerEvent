@@ -1,0 +1,70 @@
+i.fa.fa-anchor {
+    color: rgb(82, 77, 77);
+}
+.label-success,
+.badge-success {
+    background-color: #1c84c6;
+    color: #ffffff;
+}
+.docFolders {
+    -moz-box-shadow: 0px 0px 2px #777;
+    -webkit-box-shadow: 0px 0px 2px #777;
+    box-shadow: 0px 0px 2px #777;
+    border-top: none !important;
+}
+
+.SelectedFolder {
+    background-color: #4590d2;
+}
+
+h4 {
+    background-color: #eee;
+    border-top: 3px solid #36cc95;
+    margin-top: 35px;
+}
+.form-control {
+    font-size: 14px;
+    border-left: 1px solid #ccc !important;
+    border-top: 1px solid #ccc !important;
+    border-right: 1px solid #ccc !important;
+    border-bottom: 3px solid #36cc95;
+}
+.btn-continue:hover {
+    background-color: rgb(175, 175, 100);
+}
+.btn-primary {
+    background-color: #848484;
+    border-color: #848484;
+    color: #ffffff;
+    box-shadow: 0 8px 7px rgba(0, 0, 0, 0.22);
+}
+.tt {
+    margin-left: 562px;
+}
+
+mat-expansion-panel-header#mat-expansion-panel-header-2 {
+    background-color: #4590d2;
+}
+
+table.table.table-striped.table-hover.doc {
+    width: 85%;
+    margin-bottom: 1rem;
+    color: #212529;
+    margin-left: 1px;
+}
+
+table.table.table-striped.table-hover {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    margin-left: 1px;
+}
+
+table.table.table-striped {
+    width: 100%;
+    table-layout: fixed;
+    margin-top: 20px;
+}
+.but {
+    float: right;
+}

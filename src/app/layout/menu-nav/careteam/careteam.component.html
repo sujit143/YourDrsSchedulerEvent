@@ -1,0 +1,220 @@
+<h4>Care Team </h4>
+<div class="form-group col-md-6">
+    <div class="btngrp">
+        <button class="btn btn-secondary " (click)="addgrp(content5)">Add Group</button>&nbsp;&nbsp;
+        <button class="btn btn-secondary  ha" (click)="openAdd(content4)">Add Member</button>
+    </div>
+</div>
+<table class='table'>
+    <thead>
+
+        <th>Member/Group</th>
+        <th>Status</th>
+        <th>Role Name</th>
+        <th>Action</th>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of arrCare; let i=index">
+            <td>{{item.member}}</td>
+            <td>{{item.status}}</td>
+            <td>{{item.role}}</td>
+            <td>
+                <button class="btn btn-secondary">i</button> |
+                <button class="btn btn-secondary" (click)="openEdit(content,i)">Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="btngrpsec">
+    <button class="btn btn-secondary" (click)="previousDocuments()" >Previous</button> &nbsp;&nbsp;
+
+    <button class="btn btn-secondary" (click)="nextMemo()" >Next</button> &nbsp;&nbsp;
+
+    <button class="btn btn-secondary" >Complete</button>
+</div>
+
+<!-- popup for edit members -->
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h3>Add Member</h3>
+        <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">Close </button>
+    </div>
+    <div class="modal-body">
+        <form class="needs-validation" novalidate>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Role</label><span style="color: red">*</span>
+                    <select formcontrolname="sourcer" class="form-control" style="color: black">
+                        <option value="12" selected="selected">UnKnown</option>
+                        <option value="1">Self (Patient)</option>
+                        <option value="3">Employer</option>
+                        <option value="4">Representative</option>
+                        <option value="5">Provider</option>
+                        <option value="7">Insurance Carrier</option>
+                        <option value="8">Office</option>
+                        <option value="9">Hospital</option>
+                        <option value="10">School</option>
+                        <option value="11">Patient</option>
+                        <option value="13">Physician Assistant </option>
+                    </select>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3" *ngFor="let item of arrCare">
+                    <label>Member</label><br>
+                    <label for="validationCustom01">{{item.member}}</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Start Date</label><span style="color: red">*</span>
+                    <input class="form-control" id="validationCustom01" type="date" name="date">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom02">End Date</label>
+                    <input class="form-control" id="validationCustom02" type="date" name="date">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom03">Spec</label>
+                    <!-- <input type="text"  class="form-control" id="validationCustom03"> -->
+                    <select>
+                    <option *ngFor="let item of arr">{{item.name}}</option>
+                    </select>
+                    <!-- <div class="valid-feedback">
+                        Looks good!
+                    </div> -->
+                </div>
+            </div>
+            <div class="form-group"><br>
+                <input class="check" type="checkbox">&nbsp;&nbsp;<label>Quarterbacking Provider?</label>
+            </div>
+            <div class="modal-header"></div>
+            <div class="btn1">
+                <button class="btn btn-danger">Cancel</button>&nbsp;&nbsp;
+                <button class="btn btn-secondary">Update</button>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+
+<!--pop up add member -->
+<ng-template #content4 let-modal>
+
+    <div class="modal-header">
+        <h2>Add New Member</h2>
+        <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+    <div class="modal-body">
+        <form class="needs-validation" novalidate>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Role</label><span style="color: red">*</span>
+                    <select formcontrolname="sourcer" class="form-control" style="color: black">
+                        <option value="12" selected="selected">UnKnown</option>
+                        <option value="1">Self (Patient)</option>
+                        <option value="3">Employer</option>
+                        <option value="4">Representative</option>
+                        <option value="5">Provider</option>
+                        <option value="7">Insurance Carrier</option>
+                        <option value="8">Office</option>
+                        <option value="9">Hospital</option>
+                        <option value="10">School</option>
+                        <option value="11">Patient</option>
+                        <option value="13">Physician Assistant </option>
+                    </select>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom03">Member</label><span style="color: red">*</span>
+                    <input type="text" class="form-control" id="validationCustom03">
+                    <div class="valid-feedback">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Start Date</label><span style="color: red">*</span>
+                    <input class="form-control" id="validationCustom01" type="date" name="date">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom02">End Date</label>
+                    <input class="form-control" id="validationCustom02" type="date" name="date">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom03">Specialty</label>
+                    <select class="form-control" >
+
+                        <option *ngFor="let item of arr" >{{item.name}}</option>
+                    </select>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="modal-header"></div>
+            <div class="btnsave">
+                <button class="btn btn-secondary">Save</button>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+<!--pop up add group -->
+<ng-template #content5 let-modal>
+
+    <div class="modal-header">
+        <h2>Add New Group</h2>
+        <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+    <div class="modal-body">
+        <form class="needs-validation" novalidate>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom03">Care Team Group</label><span style="color: red">*</span>
+                    <input type="text" class="form-control" id="validationCustom03">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Start Date</label><span style="color: red">*</span>
+                    <input class="form-control" id="validationCustom01" type="date" name="date">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom02">End Date</label>
+                    <input class="form-control" id="validationCustom02" type="date" name="date">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-header"></div>
+            <div class="btnsave">
+                <button class="btn btn-secondary">Save</button>
+            </div>
+        </form>
+    </div>
+</ng-template>

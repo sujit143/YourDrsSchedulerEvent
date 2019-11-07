@@ -1,0 +1,111 @@
+<p-growl [(value)]="msgs"></p-growl>
+<nav class="navbar " >
+    <span class="navbar-brand mb-0 h1">Case Type</span>
+</nav><br>
+
+<div >
+    <button type="button" class="btn btn-secondary">Commercial</button>&nbsp;&nbsp;
+    <button type="button" class="btn btn-secondary">Liability</button>&nbsp;&nbsp;
+    <button type="button" class="btn btn-secondary">Worker's Compensation</button>&nbsp;&nbsp;
+    <button type="button" class="btn btn-secondary">NJ PIP</button>&nbsp;&nbsp;
+    <button type="button" class="btn btn-secondary">Auto Accident</button>&nbsp;&nbsp;
+    <button type="button" class="btn btn-secondary">Other </button>&nbsp;&nbsp;
+    <button type="button" class="btn btn-secondary">Self-Pay</button>&nbsp;&nbsp;
+    <button type="button" class="btn btn-secondary">NYNF</button>
+</div><br>
+<nav class="navbar">
+    <span class="navbar-brand mb-0 h1">Patient Insurance</span>
+</nav><br>
+
+<h5 style="background-color: rgb(100, 155, 236)">Insurance Associated To This Case</h5><br>
+<h6 class="text"> No payer information found</h6><br>
+<h5 style="background-color: rgb(100, 155, 236)">Additional Insurance To This Patient</h5><br>
+<h6 class="text"> No payer information found</h6><br>
+
+<div class="modal-body">
+    <div class="row">
+        <div class="col-sm-10">
+
+            <div class="card text-white bg-secondary mb-3">
+                <div class="card-header">General Accident Info</div>
+                <div class="card-body">
+                    <form [formGroup]="insurance">
+                        <div class="form-group row">
+
+
+                            <div class="form-group col-md-3">
+                                <label>Date of Accident</label>
+                                <div>
+                                    <input class="form-control" type="date" name="bday">
+                                </div><br>
+                                <div class="form-check form-check-inline">
+                                    <label>Was patient hospitalized? </label>&nbsp;&nbsp;&nbsp;
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox1" value="option1">
+                                    <label class="form-check-label" for="inlineCheckbox1">Yes</label>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
+                                    <label class="form-check-label" for="inlineCheckbox2">No (Clear)</label>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label>ZIP </label>
+                                <input formControlName="zip" type="text" class="form-control form-control-new"
+                                    placeholder="xxxxx-xxxx">
+
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label>Accident City</label>
+                                <input formControlName="accidentcity" type="text" class="form-control"
+                                    placeholder=""><br>
+                                <div class="form-check form-check-inline">
+                                    <label>Did patient go to emergency room? </label>&nbsp;&nbsp;&nbsp;
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox1" value="option1">
+                                    <label class="form-check-label" for="inlineCheckbox1">Yes</label>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
+                                    <label class="form-check-label" for="inlineCheckbox2">No (Clear)</label>
+                                </div>
+
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label>Accident State</label>
+                                <input formControlName="accidentstate" type="text" class="form-control"
+                                    placeholder="select" style=" color: white">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar">
+    <span class="navbar-brand mb-0 h1">Authorised Representative</span>
+</nav><br>
+
+<h6 class="text"> Add Autorised Representative</h6>
+
+<div class="input-group col-md-6">
+    <input class="form-control member" type="text" placeholder="Search member.."
+        style="background-color:white; color: white">
+    <button type="button" class="btn btn-light" (click)="openview(contentz)"><img class="btnnn"
+            src="assets/images/eye.png" width=30 height=30></button>
+    <button type="button" class="btn btn-light" (click)="opensearch(content)"><img class="btnnn"
+            src="assets/images/serach.png" width=30 height=30></button>
+    <button type="button" class="btn btn-light" (click)="opensearch(content)"><img class="btnnn"
+            src="assets/images/pl.png" width=30 height=30></button>
+</div>
+
+<div>
+    <button class="btn btn-secondary btn-complete" (click)='previousDemographics()'>Previous</button>&nbsp;&nbsp;&nbsp;
+    <button class="btn btn-secondary btn-complete" (click)='nextAppointments()'>Next</button>
+
+</div>
+
+
+
+

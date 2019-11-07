@@ -1,0 +1,87 @@
+<div class="ibox-title">
+    <h5>Appointment Memo</h5>
+</div>
+
+<div class="hhhh">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">is universal comment?</label>
+</div>
+
+
+<button class="btnMembersTagAppointmentMemo" (click)="openEdit(content)" class="ddd">Tag Members</button>
+
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">comments</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+
+
+    <button class="btn btn-primary" (click)="previousCareteam()" >Previous</button>
+    <button class="btn btn-secondary" >Complete</button>
+
+
+<ng-template #content let-modal>
+    <h3>Tag member</h3>
+    <div class="modal-header">
+        <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+    <form>
+        <table style="width:100%">
+            <tr>
+                <th>Patient</th>
+                <th>AccountNumber</th>
+                <th>Case#</th>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Y56678</td>
+                <td>Y965</td>
+            </tr>
+
+        </table>
+    </form>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+    <div>
+        <label>Search Tag To Member</label>
+
+        <div>
+            <input class="col-sm-5" type="Search" id="inputSearch"
+                placeholder="Enter First Name or Last Name">&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-secondary" data-toggle="collapse" href="#collapseExample">Search Tag To</button>
+    </div>
+    <div class="collapse" id="collapseExample">
+
+        <div class="card mb-8">
+
+            <div class="card mb-8">
+
+                <div class="card-body1 table-responsive">
+                    <table class="table">
+                        <thead>
+                            <th>Name</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Location</th>
+                            <th>Practice</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of arr">
+                                <td>{{item.Name }}</td>
+                                <td>{{item.City}}</td>
+                                <td>{{item.State }}</td>
+                                <td>{{item.Location}}</td>
+                                <td> {{item.practice}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <button type="button" class="btn btn-success" (click)="modal.dismiss('Cross click')">Save</button>
+</ng-template>

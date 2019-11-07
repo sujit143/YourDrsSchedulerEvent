@@ -1,0 +1,92 @@
+
+ <!-- <div style="padding-top: 300px;" *ngIf="loading; else elseblock" class="ssss">
+    <div class="iiiiii">
+    <img src="assets/images/loading.gif" height="200px" >
+  </div>
+</div>
+
+
+<ng-template #elseblock> -->
+<div class="control-section">
+    <ejs-schedule #scheduleObj width='100%' height='550px' [selectedDate]="selectedDate"
+        [eventSettings]="eventSettings"
+        [showQuickInfo]="showQuickInfo"  [showQuickInfo]="showQuickInfo" [timeScale]="timeScale" >
+        <e-resources>
+            <e-resource class="r1" field='ProjectId' title='Choose Project' name='Projects' [dataSource]='sche'
+                textField='appointmentType' idField='PracticeListId' colorField='appointmentColor'>
+            </e-resource>
+            <e-resource class="r2" field='CategoryId' title='Category' name='Categories' [dataSource]='sche'
+                [allowMultiple]='allowMultiple' textField='providerName' idField='PracticeListId'
+                colorField='appointmentColor'>
+            </e-resource>
+        </e-resources>
+        <ejs-schedule [timeScale]="timeScale" >
+            <ng-template #timeScaleMajorSlotTemplate let-data>
+                       <div class="majorTime">{{getMajorTime(data.date)}}</div>
+                   </ng-template>
+                   <ng-template #timeScaleMinorSlotTemplate let-data>
+                       <div class="minorTime">{{getMinorTime(data.date)}}</div>
+                   </ng-template>
+            </ejs-schedule>
+
+
+        <ng-template #editorTemplate let-data>
+            <div>
+                <mat-tab-group animationDuration="0ms" [(selectedIndex)]=selectedIndextab>
+                    <mat-tab  label="Demographics">
+                        <app-demographics (insurenceClick)="nextInsurence()"></app-demographics>
+                        <!-- <button style="float: right;margin-right: 410px;" class="btn btn-secondary btn-next" (click)="demo ()">Next</button>
+                            <button style="float: right" class="btn btn-warning">Previous</button> -->
+                    </mat-tab>
+                    <mat-tab  label="Insurance">
+                        <h1>Insurance</h1>
+                        <app-insurance *ngIf="success" (appointmentclick)="nextAppointment()" (demographicsclickp)="previousDemographics()"></app-insurance>
+                        <!-- <button style="float: right;margin-right: 410px;" class="btn btn-secondary btn-next"
+                            (click)="selectedIndextab = 2">Next</button>
+                        <button style="float: right" class="btn btn-warning"
+                            (click)="selectedIndextab = 0">Previous</button> -->
+                    </mat-tab>
+
+                    <mat-tab label="Appointments">
+                        <app-appointments (referalclick)="nextRefferel()" (insuranceclickp)="previousInsurance()"></app-appointments>
+                        <!-- <button style="float: right;margin-right: 410px;" class="btn btn-secondary btn-next"
+                            (click)="selectedIndextab = 3">Next</button>
+                        <button style="float: right" class="btn btn-warning"
+                            (click)="selectedIndextab = 1">Previous</button> -->
+
+                    </mat-tab>
+                    <mat-tab label="Referral Source">
+                        <app-referralsource (documentclick)="nextDocuments()" (appointmentclickp)="previousAppointment()"></app-referralsource>
+                        <!-- <button style="float: right;margin-right: 410px;" class="btn btn-secondary btn-next"
+                            (click)="selectedIndextab = 4">Next</button>
+                        <button style="float: right" class="btn btn-warning"
+                            (click)="selectedIndextab = 2">Previous</button> -->
+                    </mat-tab>
+                    <mat-tab label="Documents">
+                        <app-menusidebar (clickcareteam)="nextCareteam()" (clickreferalp)="previousReferal()"></app-menusidebar>
+                        <!-- <button style="float: right;margin-right: 410px;" class="btn btn-secondary btn-next"
+                            (click)="selectedIndextab = 5">Next</button>
+                        <button style="float: right" class="btn btn-warning"
+                            (click)="selectedIndextab = 3">Previous</button> -->
+                    </mat-tab>
+                    <mat-tab label="Care Team">
+
+                        <app-careteam (clickmemo)="nextMemo()" (clickdocumentp)="previousDocuments()"></app-careteam>
+                        <!-- <button style="float: right;margin-right: 410px;" class="btn btn-secondary btn-next"
+                            (click)="selectedIndextab = 6">Next</button>
+                        <button style="float: right" class="btn btn-warning"
+                            (click)="selectedIndextab = 4">Previous</button> -->
+                    </mat-tab>
+                    <mat-tab label="Appointment Memo">
+                        <app-appointmentmemo  (clickcareteamp)="previousCareteam()"></app-appointmentmemo>
+                        <!-- <button style="float: right;margin-right: 410px;"
+                            class="btn btn-secondary btn-next">Next</button>
+                        <button style="float: right" class="btn btn-warning"
+                            (click)="selectedIndextab = 5">Previous</button> -->
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
+        </ng-template>
+    </ejs-schedule>
+</div>
+<!-- </ng-template> -->
